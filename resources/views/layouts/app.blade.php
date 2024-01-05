@@ -80,11 +80,11 @@
                                         <li class="current"><a href="/">Home</a></li>
                                         @if (Auth::user() && Auth::user()->name == 'admin')
                                             <li><a href="/penyakit">Kelola data penyakit</a></li>
-                                        @else
-                                            <li><a href="/penyakit">Daftar Penyakit</a></li>
                                         @endif
                                         @if (Auth::user())
+                                            @if (Auth::user()->name == 'admin')
                                             <li><a href="/gejala">Kelola data gejala</a></li>
+                                            @endif
                                             <li><a href="/diagnosa">Diagnosa</a></li>
                                         @endif
                                         @if (!Auth::user())
